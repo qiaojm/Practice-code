@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+        function CreateNode() {
+            var pnode = document.createElement('p');
+            var tnode = document.createTextNode('烟花三月下扬州');
+            pnode.appendChild(tnode);
+            document.body.appendChild(pnode);
+        }
+        function ReplaceNode() {
+            var pnode = document.createElement('p');
+            var tnode = document.createTextNode('故人西辞黄鹤楼');
+            pnode.appendChild(tnode);
+            //获取要替换的p节点
+                var oldnode = document.getElementsByTagName('p')[0];
+            //oldnode.replaceNode(pnode, oldnode); //此种方法只支持IE
+            oldnode.parentNode.replaceChild(pnode,oldnode);//通用的
+        }
+        function RemoveNode() {
+            var oldnode = document.getElementsByTagName('p')[0];
+            //oldnode.parentNode返回的是p节点的父节点，这里就是body，然后使用body节点的removeChild方法删除其下面的pnode节点
+            oldnode.parentNode.removeChild(oldnode);
+        }
+    </script>
+</head>
+<body>
+<input id="Button1" type="button" value="创建节点" onclick="CreateNode();"/><br/>
+    <input id="Button2" type="button" value="替换节点" onclick="ReplaceNode();"/><br/>
+    <input id="Button3" type="button" value="删除节点" onclick="RemoveNode();"/>
+</body>
+</html>
+
+<!-- 	<script type="text/javascript">
+function qq() {
+ // var a=document.getElementsByTagName("h1");
+	          var para=document.createElement('h1');
+              var Txtnode=document.createTextNode('lalala');  
+              var Getnode=document.getElementById('qiao');
+              Getnode.appendChild(para);
+              para.appendChild(Txtnode);
+　　 
+  }
+  function rmnode() {
+
+    var Gnode=document.getElementsByTagName('h1')[0];
+    Gnode.parentNode.removeChild(Gnode);
+  }
+	</script>
+<input type="button" value="创建" onclick="qq();">
+<input type="button" value="删除" onclick="rmnode();">    
+<div id="qiao">  
+</div> -->
