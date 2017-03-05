@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	      //输出方式
+		 function test()
+		 {
+			for (var i = 0; i < 5; i++) 
+			{
+		    // document.write(i);
+		     console.log(i);// console.log("num:"+i); console.log("num:",i);
+		    // alert(i);
+		    //此处有三种方式输出js的值。（1）alert（‘my text there’）,将输出到浏览器警示窗口；（2）console.log（‘my text there’），将文本输出到调试工具的Console标签；（3）document.write('my text there'),直接输出到HTML页面里被浏览器呈现。
+		    }
+		 }
+		  //输出方式
+
+		  //变量作用域
+		 var myVariable='global';
+		 var myOtherVariable='global';
+		 function myFunction(){
+		 	var myVariable = 'local';
+		 	return myVariable;
+		 }
+		 function myOtherFunction(){
+		 	 myOtherVariable = 'local';
+		 	return myOtherVariable;
+		 }
+		 console.log(myVariable);//global，因为为全局变量
+		 console.log(myFunction());//local，因为myVariable是在myFunction函数中声明的本地变量，所以作用域仅在myFunction内
+		 console.log(myVariable);//global，因为应用了第一行初始化的全局变量
+
+		 console.log(myOtherVariable);//global，因为应用了第二行初始化的全局变量
+		 console.log(myOtherFunction());//local
+		 console.log(myOtherVariable);//local，因为在OtherFunction函数里，没有使用关键字var修饰，所以应用的是全局变量myOtherVariable并将它赋值为local，所以全局变量的值被改变
+		 //输出结果为：global,local,global,global,local,local
+		 //注：尽可能避免使用全局变量
+          //变量作用域
+
+          //操作符
+           //算术操作符
+           var num = 0;
+          num = num + 2;
+          num = num * 3;
+          num = num / 2;
+          num ++;
+          num --;
+          console.log(num);
+          //  //赋值操作符
+          num += 1;
+          num -= 2;
+          num /= 2;
+          num %= 3;
+          console.log(num);
+           //比较操作符
+          console.log('num == 1:'+ (num == 1));
+          console.log('num === 1:'+ (num === 1));
+          console.log('num != 1:'+ (num != 1));
+          console.log('num > 1:'+ (num > 1));
+          console.log('num < 1:'+ (num < 1));
+          console.log('num >= 1:'+ (num >= 1));
+          console.log('num <= 1:'+ (num <= 1));
+           //逻辑操作符
+          console.log('true && false:'+ (true && false));
+          console.log('true || false:'+ (true || false));
+          console.log('！true:'+ (!true));
+          //位操作符
+          console.log('5 & 1:'+ (5 & 1));
+          console.log('5 | 1:'+ (5 | 1));
+          console.log('～5:'+ (~ 5));
+          console.log('5 ^ 1:'+ (5 ^ 1));
+          console.log('5 << 1:'+ (5 << 1));
+          console.log('5 >> 1:'+ (5 >> 1));
+          //typeof操作符可以返回变量或表达式的类型
+          console.log('typeof num:'+ typeof num);
+          console.log('typeof Packt:'+ typeof 'Packt');
+          console.log('typeof true:'+ typeof true);
+          console.log('typeof [1,2,3]:'+ typeof [1,2,3]);
+          console.log('typeof {name:John}:'+ typeof {name:'John'});
+          //操作符
+
+	</script>
+</head>
+<body onload="test()">
+
+</body>
+</html>
